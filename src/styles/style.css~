@@ -2,7 +2,7 @@
   margin: 0 auto;
 }
 
-#main_wrapper .form-group{
+#main_wrapper form-group{
   width: 200px;
   text-align: center;
   margin: 0 auto;

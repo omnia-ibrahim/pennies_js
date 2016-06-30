@@ -33,10 +33,11 @@
 <body>
 
 
-  <div id='main_wrapper' class='container'> <img class='img-responsive' src='pennies.jpg' alt="Pennies" title="Pennies" /> 
+  <div id='main_wrapper' class='container'> <img class='img-responsive' src='images/pennies.jpg' alt="Pennies" title="Pennies" /> 
     <div class="form-group">
       <label for="pennies">Amount:</label>
-      <input type="text" class="form-control" id="amount" onkeypress="return search(event)" size=10>
+      <input type="text" class="form-control" id="amount" onkeypress="return search(event)" size=10 placeholder=100£>
+      <span> Enter amount in similar syntax: 92p, £2.12, .. </span>
     </div>
 
   </div>
