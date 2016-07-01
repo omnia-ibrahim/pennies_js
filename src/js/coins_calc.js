@@ -32,7 +32,9 @@ function search(ele) {
 
 
 /**
- *
+ * Main function to calculate the minmum number of coins from a given number
+ * @n : the sum amount of money given
+ * return: array of number of coins used
  */
 function minCoins (n) {
 
@@ -69,7 +71,6 @@ function minCoins (n) {
     	change.push(coinUsed[total]);
         total -= coinUsed[total];
     }
-    
     return change;
 }
 
@@ -108,7 +109,7 @@ function minCoins (n) {
 */
 
 /**
- *
+ * Function to check if the input is valid
  */
 function validateInput(str) {
   var response;
@@ -156,11 +157,12 @@ function parseInput(input) {
        str = str * 100;
      }
   }
+  alert(str);
   return str;
 }
 
 /**
- *
+ * Function to display output of coins multiplied by how many of each.
  */
 function formatOutput(out) {
   var result = '<h2> Output: <h2/><br/>';

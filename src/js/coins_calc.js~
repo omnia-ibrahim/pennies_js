@@ -5,7 +5,7 @@ function search(ele) {
     var parsedInput = '';
     // Check if Enter is pressed
     if(ele.keyCode == 13) {
-    
+      $('#form-output').html("");
       var amount = document.getElementById("amount");
       var str = amount.value;
   
@@ -32,7 +32,9 @@ function search(ele) {
 
 
 /**
- *
+ * Main function to calculate the minmum number of coins from a given number
+ * @n : the sum amount of money given
+ * return: array of number of coins used
  */
 function minCoins (n) {
 
@@ -69,7 +71,6 @@ function minCoins (n) {
     	change.push(coinUsed[total]);
         total -= coinUsed[total];
     }
-    
     return change;
 }
 
@@ -108,7 +109,7 @@ function minCoins (n) {
 */
 
 /**
- *
+ * Function to check if the input is valid
  */
 function validateInput(str) {
   var response;

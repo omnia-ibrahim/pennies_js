@@ -37,7 +37,7 @@
     <div class="form-group">
       <label for="pennies">Amount:</label>
       <input type="text" class="form-control" id="amount" onkeypress="return search(event)" size=10 placeholder=£100>
-      <span> Enter amount in similar syntax: 92p, £2.12, .. </span>
+      <span class='description'> Enter amount in similar syntax: 92p, £2.12, .. </span>
     </div>
 
    <div id='form-output'></div>
