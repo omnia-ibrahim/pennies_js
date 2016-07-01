@@ -26,6 +26,8 @@ Program that given a number of pennies will calculate the minimum number of Ster
 
 * Check the output of the unit tests.
 
+* The code has some simple unit tests for some of the main functions used. 
+
 
 ## Notes:
 
