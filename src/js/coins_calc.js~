@@ -2,7 +2,7 @@
  * Function to get the user input
  */
 function search(ele) {
-    
+    var parsedInput = '';
     // Check if Enter is pressed
     if(ele.keyCode == 13) {
     
@@ -14,18 +14,19 @@ function search(ele) {
 
       // Validate input
       var response = validateInput(str_trimmed);
+      
+      // Check if input is valid
+      if (response === true) {
+        parsedInput = parseInput(str_trimmed);
+      } else {
+        alert(response);
+      }  
 
-      alert(response);
-      //alert(str_trimmed);
-     var out = minCoins(1320);
-     var formatted_output = formatOutput(out);
-     $('#form-output').html(formatted_output);
-      alert(out);
-alert(out.length);
-for (var i = 0; i < out.length; ++i) {
-//        alert(out[i]);    
-//alert(out.length);    
-    }  
+     if ($.isNumeric(parsedInput)) {
+       var out = minCoins(parsedInput);
+       var formatted_output = formatOutput(out);
+       $('#form-output').html(formatted_output);
+     }    
   }
 }
 
@@ -134,19 +135,44 @@ function validateInput(str) {
 }
 
 /**
+ * Parse Input
+ */
+function parseInput(input) {
+  var pound = false;
+  var pennies = false;
+  // Check if amount in pounds or pennies
+  if(input.indexOf('£') >= 0){
+     pound = true;
+  }
+  if(input.indexOf('p') >= 0){
+    pennies = true;
+  }
+  // Remove all characters and keep only numbers
+  var str = input.replace(/[£p]+/g,'');
+  if (pound === true) { str = str * 100; }
+
+  if (pennies === true) { 
+    if (str % 1 != 0) {
+       str = str * 100;
+     }
+  }
+  return str;
+}
+
+/**
  *
  */
 function formatOutput(out) {
-  var result = '';
+  var result = '<h2> Output: <h2/><br/>';
   var result_1 = '';
  var counted_array = countDup(out);
   for (var i = 0; i < counted_array[0].length; ++i) {
     var value = counted_array[0][i];
     if (counted_array[0][i] === 200) {
-        result_1 = '2£';
+        result_1 = '£2';
     }    
     else if (counted_array[0][i] === 100) {
-        result_1 = '1£';
+        result_1 = '£1';
     }
 
     else {

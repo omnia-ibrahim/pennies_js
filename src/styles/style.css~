@@ -2,8 +2,25 @@
   margin: 0 auto;
 }
 
-#main_wrapper form-group{
-  width: 200px;
-  text-align: center;
+#main_wrapper .form-group {
+  width: 350px;
   margin: 0 auto;
+  margin-top: 15px;
+}
+
+#main_wrapper .description {
+  color: grey;
+  font-size: 12px;
+}
+
+#main_wrapper #form-output {
+
+    margin: 0 auto;
+    padding: 10px;
+    width: 250px;
+}
+
+#main_wrapper #form-output h2 {
+  color: blue;
+  font-size: 18px;
 }
