@@ -9,7 +9,7 @@ Program that given a number of pennies will calculate the minimum number of Ster
 
 ## Technologies used
 
-* It uses javascript, bootstrap3, Qunit, Jquery.
+* It uses javascript, Css, HTML5, bootstrap3, Qunit, Jquery.
 
 ## How to run the code
 
@@ -17,7 +17,7 @@ Program that given a number of pennies will calculate the minimum number of Ster
 
 * Open pennies_js/src/index.html from any browser (recommended to be modern browser)
 
-* Add the input as illustrated in the description and check the output below it.
+* Add the input as illustrated in the description and press **Enter** and then check the output below it.
 
 
 ## How to run the test
