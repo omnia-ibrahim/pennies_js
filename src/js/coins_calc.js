@@ -5,7 +5,9 @@ function search(ele) {
     var parsedInput = '';
     // Check if Enter is pressed
     if(ele.keyCode == 13) {
+
       $('#form-output').html("");
+
       var amount = document.getElementById("amount");
       var str = amount.value;
   
@@ -44,12 +46,11 @@ function minCoins (n) {
   var numberOfCoins = [0];
   var coinUsed = [0];
     
-    // Dynamic programming, compute the coin used from 1..n.
+    // Dynamic programming, calculate the coin used
     for (var i=1; i<=n; i++) {
         var minNumberOfCoins = n;
         var coin = -1;
         
-        // What next coin would get to 'i' using the minimum # of coins.
         coins.forEach( function(c) {
             if (c <= i) {
                 var min = numberOfCoins[i-c] + 1;
@@ -64,7 +65,7 @@ function minCoins (n) {
         coinUsed[i] = coin;
     }
     
-    // What coins were used?
+    // what coins are used to get the min
     var change = [];
     var total = n;
     while (total > 0) {
@@ -131,7 +132,6 @@ function validateInput(str) {
     } else {
       response = true;
     }
-
   return response;
 }
 
@@ -157,7 +157,6 @@ function parseInput(input) {
        str = str * 100;
      }
   }
-  alert(str);
   return str;
 }
 
@@ -167,23 +166,20 @@ function parseInput(input) {
 function formatOutput(out) {
   var result = '<h2> Output: <h2/><br/>';
   var result_1 = '';
- var counted_array = countDup(out);
+  var counted_array = countDup(out);
   for (var i = 0; i < counted_array[0].length; ++i) {
     var value = counted_array[0][i];
     if (counted_array[0][i] === 200) {
-        result_1 = '£2';
+       result_1 = '£2';
     }    
     else if (counted_array[0][i] === 100) {
-        result_1 = '£1';
+       result_1 = '£1';
     }
-
     else {
-        result_1 = counted_array[0][i] + 'p';
+       result_1 = counted_array[0][i] + 'p';
     }
      result += counted_array[1][i] + ' X ' + result_1 + '<br />';
-
   }
-  
   return result;
 }
 
@@ -192,7 +188,6 @@ function formatOutput(out) {
  */
 function countDup(arr) {
     var a = [], b = [], prev;
-
     arr.sort();
     for ( var i = 0; i < arr.length; i++ ) {
         if ( arr[i] !== prev ) {
@@ -203,6 +198,5 @@ function countDup(arr) {
         }
         prev = arr[i];
     }
-
     return [a, b];
 }
